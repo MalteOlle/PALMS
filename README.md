@@ -3,9 +3,9 @@ Platform for Analysis and Labeling of Medical Time Series
 This software features the following pubication: 
 https://www.mdpi.com/1424-8220/20/24/7302/htm
 
-##### Fiducials annotation: https://malteolle.github.io/PALMS/    
+##### Fiducials annotation: [https://vimeo.com/490142964](https://malteolle.github.io/PALMS/)
 ![Fiducials annotation](https://i.ibb.co/qyJfgK5/FIG3.png)  
-##### Partitions annotation: https://malteolle.github.io/PALMS/   
+##### Partitions annotation: [https://vimeo.com/490143050](https://malteolle.github.io/PALMS/)  
 ![Partitions annotation](https://i.ibb.co/tcjGtyr/FIG4.png)  
 ##### Quality annotation  
 ![Quality annotation](https://i.ibb.co/TT66Ydr/FIG5.png)
