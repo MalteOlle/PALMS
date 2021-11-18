@@ -39,6 +39,8 @@ from logic.operation_mode.partitioning import Partitions
 from logic.operation_mode.epoch_mode import EpochWindow, EpochModeConfig
 from gui.plot_area import PlotArea
 
+from study.mouse_logger import MouseLogger
+
 logger = logging.getLogger()
 if __debug__:
     logger.setLevel(logging.DEBUG)
@@ -151,10 +153,14 @@ class Viewer(QtWidgets.QMainWindow):
         self.groups: DefaultDict[int, Group] = defaultdict(Group)
         self.setWindowTitle('PALMS')
 
+        self.mouse_logger = MouseLogger()
+        self.mouse_logger.register_window(self, application.start_time)
+
         self.scrollArea = ScrollArea(self)
         self.scrollAreaWidgetContents = ScrollAreaWidgetContents(self.scrollArea)
         self.setCentralWidget(self.scrollArea)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        #self.mouse_logger.register_window(self.scrollArea)
 
         self.synchronized = True
         self.cursor_readout = False
@@ -185,6 +191,11 @@ class Viewer(QtWidgets.QMainWindow):
         self.timer = QTimerWithPause(interval=PALMS.config['autoplay_timer_interval'])
         self.timer.timeout.connect(self.shiftRight)
         Viewer._instance = weakref.ref(self)()
+        self.showMaximized()
+
+    def changeEvent(self, ev):
+        if hasattr(self, "mouse_logger"):
+            self.mouse_logger.change_event(ev, self)
 
     @staticmethod
     def get():
@@ -1137,6 +1148,7 @@ class Viewer(QtWidgets.QMainWindow):
         self.setTrackMenuStatus(bool(self.selectedPanel.views))
 
     def closeEvent(self, event):
+        self.mouse_logger.stop_logging(self)
         if not self.REBOOT_APP:  # the app is restarting, thus a dialog already appeared
             result = QtWidgets.QMessageBox.question(self,
                                                     "Confirm Exit...",
@@ -1166,11 +1178,14 @@ class PALMS(object):  # Application - here's still the best place for it methink
     shortcuts = None
 
     def __init__(self, file_to_load: Path = None, **kwargs):
+        from datetime import datetime
         start = timer()
+        self.start_time = datetime.now().timestamp()
         # sys.argv[0] = 'PALMS'  # to override Application menu on OSX
         QtCore.qInstallMessageHandler(self._log_handler)
         QtWidgets.QApplication.setDesktopSettingsAware(False)
         self.qtapp = qtapp = QtWidgets.QApplication(sys.argv)
+
         qtapp.setStyle("fusion")
         qtapp.setApplicationName("PALMS")
         qtapp.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)

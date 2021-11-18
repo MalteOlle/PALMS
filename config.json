@@ -10,10 +10,10 @@
     "show_cursor": false,
     "show_xaxis_label": false,
     "autoplay_timer_interval": 800,
-    "default_mode": "annotation",
+    "default_mode": "partition",
     "viewer_window_size": [
-        1854,
-        1057
+        1920,
+        1017
     ],
     "initial_partition_span_sec": 3,
     "annotationConfig_columns": [
@@ -28,13 +28,13 @@
         "symbol_colour"
     ],
     "default_partition_labels": [
-        "start",
-        "end",
-        "artifact"
+        "walk (slow)",
+        "walk (normal)",
+        "walk (fast)"
     ],
     "pinned_to_options": [
         "peak",
         "valley"
     ],
-    "prev_database": "EXAMPLE_PPG"
+    "prev_database": "PDKIT_ANALYZER"
 }

@@ -20,6 +20,7 @@ except Exception as e:
 from gui import PALMS
 
 
+
 def reimport_all():
     """
     when restarting the app, all modules need to be reset, otherwise some settings might have non-default values
