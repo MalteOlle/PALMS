@@ -13,7 +13,7 @@
     "default_mode": "partition",
     "viewer_window_size": [
         1920,
-        1017
+        1137
     ],
     "initial_partition_span_sec": 3,
     "annotationConfig_columns": [
