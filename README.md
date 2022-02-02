@@ -3,9 +3,9 @@ Platform for Analysis and Labeling of Medical Time Series
 This software features the following pubication: 
 https://www.mdpi.com/1424-8220/20/24/7302/htm
 
-##### Fiducials annotation: [https://vimeo.com/490142964](https://malteolle.github.io/PALMS/)
+##### Fiducials annotation: https://vimeo.com/490142964    
 ![Fiducials annotation](https://i.ibb.co/qyJfgK5/FIG3.png)  
-##### Partitions annotation: [https://vimeo.com/490143050](https://malteolle.github.io/PALMS/)  
+##### Partitions annotation: https://vimeo.com/490143050   
 ![Partitions annotation](https://i.ibb.co/tcjGtyr/FIG4.png)  
 ##### Quality annotation  
 ![Quality annotation](https://i.ibb.co/TT66Ydr/FIG5.png)
@@ -67,9 +67,9 @@ into *docs\examples\examples_Physionet2011\\*
 # DOCUMENTATION
 User_manual (may be outdated): *docs\user_manual.pdf*    
 Demo video (may be outdated):
-1. Browse: [https://vimeo.com/490143111](https://malteolle.github.io/PALMS/)
-2. Annotation: [https://vimeo.com/490142964](https://malteolle.github.io/PALMS/)
-3. Partitions: [https://vimeo.com/490143050](https://malteolle.github.io/PALMS/)
+1. Browse: https://vimeo.com/490143111  
+2. Annotation: https://vimeo.com/490142964  
+3. Partitions: https://vimeo.com/490143050 
 
 
 Instructions for creating new database-configurations: *logic\\databases\\EXAMPLE_...*   
